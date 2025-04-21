@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img{
+            height:100px;
+            width:100px;
+        }
+
+    </style>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="w-full h-full">
+    <h1 class="text-center text-blue-900 text-4xl font-bold">Home page!</h1>
+
+    <%if(locals.Books){%>
+      <%for(let i=0;i<Books.length;i++){%>
+        <div class="w-[90%] mx-auto border m-4">
+            <h1><%=Books[i].title %></h1>
+            <h2><%=Books[i].author %></h2>
+            <h3><%=Books[i].year %></h3>
+            <img src="<%=Books[i].imageUrl %>" alt="" >
+            <a  href="/book/delBook/<%=Books[i]._id%>">delete</a>
+            <a href="/book/updateBookPage/<%=Books[i]._id%>">update</a>
+        </div>
+      <%}%>
+    <%}%>
+
+</body>
+</html>

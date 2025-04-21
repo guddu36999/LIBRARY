@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>updateBook Page!</h1>
+
+    <%if(locals.Book){%>
+      <form action="/book/updateBook/<%=Book._id%>" method="post">
+        <input type="text" name="title" id=""  value="<%=Book.title%>"  required>
+        <input type="text" name="author" id=""  value="<%=Book.author%>" required>
+        <input type="text" name="year" id="" value="<%=Book.year%>"  required>
+         <button type="submit">submit and update!</button>
+      </form>
+
+    <%}%>
+
+</body>
+</html>
