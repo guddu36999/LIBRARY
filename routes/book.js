@@ -60,15 +60,16 @@ router.get('/updateBookPage/:id',async(req,res)=>{
   }
 });
 
-router.post('/updateBook/:id',async(req,res)=>{
+router.post('/updateBook/:id',upload.single('imageUrl'),async(req,res)=>{
     try{
         await book.findByIdAndUpdate(req.params.id,{
             title:req.body.title,
             author:req.body.author,
-            year:req.body.year
+            year:req.body.year,
+            imageUrl: `/images/${req.file.filename}`
         });
         return res.redirect('/');
-
+        
     }
     catch(err){
         console.log(err);
