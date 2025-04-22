@@ -13,20 +13,23 @@
     </style>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="w-full h-full">
-    <h1 class="text-center text-blue-900 text-4xl font-bold">Home page!</h1>
+<body class="w-full h-full p-8">
+    <h1 class="text-center text-blue-900 text-9xl font-light font-bold mb-5 ">Home page!</h1>
 
     <%if(locals.Books){%>
-      <%for(let i=0;i<Books.length;i++){%>
-        <div class="w-[90%] mx-auto border m-4">
-            <h1><%=Books[i].title %></h1>
-            <h2><%=Books[i].author %></h2>
-            <h3><%=Books[i].year %></h3>
-            <img src="<%=Books[i].imageUrl %>" alt="" >
-            <a  href="/book/delBook/<%=Books[i]._id%>">delete</a>
-            <a href="/book/updateBookPage/<%=Books[i]._id%>">update</a>
+        <H1 class="font-light text-2xl m-2">ALL BOOKS</H1>
+        <div class="flex justify-center items-center w-full h-[680px] border-2 gap-4 p-4 rounded-sm">
+            <%for(let i=0;i<Books.length;i++){%>
+                <div class="w-1/2 h-full m-2 p-4 mx-auto border m-4 flex flex-col justify-evenly items-center rounded-sm">
+                    <h1 class="text-2xl font-bold text-left w-full"><%=Books[i].title %></h1>
+                    <h2 class="w-full text-left">By:<%=Books[i].author %></h2>
+                    <h3 class="w-full text-left">Published:<%=Books[i].year %></h3>
+                    <img src="<%=Books[i].imageUrl %>" alt="" class="w-full h-[70%]">
+                    <a  href="/book/delBook/<%=Books[i]._id%>" class="w-full text-center bg-blue-500 rounded-md  font-thin text-white">DELETE</a>
+                    <a href="/book/updateBookPage/<%=Books[i]._id%>" class="w-full text-center bg-blue-500 rounded-md font-thin text-white">UPDATE</a>
+                </div>
+              <%}%>
         </div>
-      <%}%>
     <%}%>
 
 </body>

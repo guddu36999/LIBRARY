@@ -5,14 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        html,body{
+            width:100%;
+            height:100%
+        }
+    </style>
 </head>
-<body>
-      <form action="/book/add" method="post" enctype="multipart/form-data">
-        <input type="text" name="title" id="" placeholder="enter the name" required>
-        <input type="text" name="author" id="" placeholder="enter the author" required>
-        <input type="text" name="year" id="" placeholder="enter the year" required>
-        <input type="file" name="imageUrl" id="" required>
-        <button type="submit">Submit to Add</button> 
+<body class="flex flex-col justify-center items-center">
+
+      <form action="/book/add" method="post" enctype="multipart/form-data" class="w-4/10 h-2/3 my-auto mx-auto border-2  flex flex-col justify-center items-center p-4">
+        <input type="text" name="title" id="" placeholder="enter the name" required class="border text-sm rounded-md w-full m-4 h-1/5 text-center text-xs">
+        <input type="text" name="author" id="" placeholder="enter the author" required class="border text-sm rounded-md w-full m-4 h-1/5 text-center text-xs">
+        <input type="text" name="year" id="" placeholder="enter the year" required class="border text-sm rounded-md w-full m-4 h-1/5 text-center text-xs">
+        <label for="book">Upload Book:</label>
+        <input type="file" name="imageUrl" id="" required class="text-sm rounded-md w-full m-4 h-1/5 text-center text-xs">
+        <button type="submit" class="w-full bg-blue-600 m-4 h-1/5 text-center text-lg font-bold text-white rounded-3xl">Submit to Add</button> 
       </form>
 
 </body>
