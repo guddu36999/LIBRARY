@@ -18,9 +18,9 @@
 
     <%if(locals.Books){%>
         <H1 class="font-light text-2xl m-2">ALL BOOKS</H1>
-        <div class="flex justify-center items-center w-full h-[680px] border-2 gap-4 p-4 rounded-sm">
+        <div class="flex flex-wrap justify-center items-center w-full h-[680px] border-2 gap-4 p-4 rounded-sm">
             <%for(let i=0;i<Books.length;i++){%>
-                <div class="w-1/2 h-full m-2 p-4 mx-auto border m-4 flex flex-col justify-evenly items-center rounded-sm">
+                <div class="w-[48%] h-full m-2 p-4 mx-auto border m-4 flex flex-col justify-evenly items-center rounded-sm">
                     <h1 class="text-2xl font-bold text-left w-full"><%=Books[i].title %></h1>
                     <h2 class="w-full text-left">By:<%=Books[i].author %></h2>
                     <h3 class="w-full text-left">Published:<%=Books[i].year %></h3>
